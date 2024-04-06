@@ -201,6 +201,7 @@ class UpdateStatusView(View):
         # Perform different actions based on the hidden value
         if action == 'approve':
             booking.status = "Booked"
+            success_url = '#'
             # Send email to tenant
             self.send_approval_email(booking)
         elif action == 'reject':
